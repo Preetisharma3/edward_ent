@@ -26,7 +26,11 @@ Route::group([
 
 ], function ($router) {
     Route::post('/login', [AuthController::class, 'login']);
+    Route::get('/show', [AuthController::class, 'getData']);
+     Route::get('/Agreement', [AuthController::class, 'getAgreement']);
+    Route::get('/edit/{id}', [AuthController::class, 'edit']);
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
+    Route::post('/postData', [AuthController::class, 'postData']);
 });
