@@ -8,6 +8,8 @@ use Illuminate\Support\str;
 
 class DatabaseSeeder extends Seeder
 {
+
+    ghgjhgj
     /**
      * Seed the application's database.
      *
