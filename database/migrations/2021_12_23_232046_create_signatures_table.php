@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJobsTable extends Migration
+class CreateSignaturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateJobsTable extends Migration
      */
     public function up()
     {
-        Schema::create('jobs', function (Blueprint $table) {
-             $table->bigIncrements('id');
-             $table->string('job_folder');
-            $table->unsignedBigInteger('Agreement_id');
+        Schema::create('signatures', function (Blueprint $table) {
+            $table->id();
+            $table->string('signature');
+            $table->enum('status', ['Active', 'Inactive']);
             $table->timestamps();
-             $table->foreign('Agreement_id')->references('id')->on('agreements')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -29,6 +28,6 @@ class CreateJobsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jobs');
+        Schema::dropIfExists('signatures');
     }
 }
