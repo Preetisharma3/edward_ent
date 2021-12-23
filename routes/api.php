@@ -33,4 +33,5 @@ Route::group([
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
     Route::post('/postData', [AuthController::class, 'postData']);
+     Route::get('/getTemplate', [AuthController::class, 'getTemplate']);
 });

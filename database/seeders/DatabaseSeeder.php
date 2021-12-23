@@ -17,9 +17,11 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         DB::table('jobs')->insert([
-            'id'=>2,
-            'job_folder'=>'Folder Two',
+            'id'=>1,
+            'job_folder'=>'Folder One',
             'Agreement_id'=>1
+            
+
         ]);
     }
 }

@@ -14,7 +14,7 @@ class CreateJobsTable extends Migration
     public function up()
     {
         Schema::create('jobs', function (Blueprint $table) {
-             $table->id();
+             $table->bigIncrements('id');
              $table->string('job_folder');
             $table->unsignedBigInteger('Agreement_id');
             $table->timestamps();
