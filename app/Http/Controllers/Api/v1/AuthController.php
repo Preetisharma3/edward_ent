@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Job;
+use App\Models\Template;
 use App\Models\Agreement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -174,5 +175,12 @@ class AuthController extends Controller
            
          }
           
+           public function getTemplate()
+        {
+            
+                 $user = Template::all();
+                  return $user;
+           
+         }
 
 }
