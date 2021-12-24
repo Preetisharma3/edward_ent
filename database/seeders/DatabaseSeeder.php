@@ -18,10 +18,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        DB::table('jobs')->insert([
-            'id'=>1,
-            'job_folder'=>'Folder One',
-            'Agreement_id'=>1
+        DB::table('types')->insert([
+             'id'=>3,
+            'question_type'=>'Text_Field',
+            'type_id'=>1
+            
             
 
         ]);

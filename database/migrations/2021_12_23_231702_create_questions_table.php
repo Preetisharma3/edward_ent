@@ -16,7 +16,6 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('question_name');
-            $table->enum('question_type', ['Text_Field', 'Single_Choice','Multiple_Choice']);
             $table->timestamps();
         });
     }

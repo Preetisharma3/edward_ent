@@ -16,6 +16,7 @@ class CreateTemplatesTable extends Migration
         Schema::create('templates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('template_name');
+            $table->boolean('status')->default(false);
             $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('answer_id');
             $table->unsignedBigInteger('signature_id');
