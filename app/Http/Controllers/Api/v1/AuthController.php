@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Job;
 use App\Models\Template;
+use App\Models\Question;
 use App\Models\Agreement;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -124,42 +126,7 @@ class AuthController extends Controller
             'user' => auth()->user()
         ]);
     }
-
-    public function postData(Request $request){
-       
-    	$validator = Validator::make($request->all(), [
-           'first_name'=>'required',
-           'last_name'=>'required',
-           'phone'    =>'required',
-           'email'    =>'required',
-           'username' =>'required',
-           'password'  =>'required',
-        //    'user_type'   =>'required',
-           'status' =>'required',
-         ]);
-
-            if($validator->fails()){
-                    return response()->json($validator->errors()->toJson(), 400);
-            }
-            // dd('ghjk');
-            // dd($request->all());
-    $lead= Post::create([
-                          'first_name'=>$request->first_name,
-                           'last_name'=>$request->last_name,
-                            'phone'=>$request->phone,
-                             'email'   =>$request->email,
-                            'username' =>$request->username,
-                          'password'    =>Hash::make($request->password),
-                            'user_type'   =>$request->user_type,
-                             'status' =>$request->status,
-                       
-               
-            ]);
-            
-           return response()->json(['success' => 'Created successfuly'], 401);
-
-       
-    }
+//get Job folder
     public function getData()
         {
             
@@ -167,6 +134,7 @@ class AuthController extends Controller
                   return $user;
            
          }
+         //get Agreement
          public function getAgreement()
         {
             
@@ -174,11 +142,19 @@ class AuthController extends Controller
                   return $user;
            
          }
-          
+          //get Template
            public function getTemplate()
         {
             
                  $user = Template::all();
+                  return $user;
+           
+         }
+         //get Questions
+            public function getQuestions()
+        {
+            
+                 $user = Type::all();
                   return $user;
            
          }

@@ -34,4 +34,5 @@ Route::group([
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
     Route::post('/postData', [AuthController::class, 'postData']);
      Route::get('/getTemplate', [AuthController::class, 'getTemplate']);
+    Route::get('/getQuestion', [AuthController::class, 'getQuestions']);
 });
