@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgreementsTable extends Migration
+class CreateFoldersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateAgreementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('agreements', function (Blueprint $table) {
-             $table->bigIncrements('id');
-             $table->string('Agreement');
-             $table->boolean('status')->default(false);
-             $table->timestamps();
+        Schema::create('folders', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -28,6 +26,6 @@ class CreateAgreementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agreements');
+        Schema::dropIfExists('folders');
     }
 }

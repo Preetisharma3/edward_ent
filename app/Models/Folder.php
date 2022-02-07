@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Template extends Model
+class Folder extends Model
 {
     use HasFactory;
-     protected $fillable = [
-        'template_name','question_name','answer','type','status'
-        ];
 }

@@ -9,6 +9,6 @@ class Agreement extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'Agreement'
+        'Agreement','status'
         ];
 }

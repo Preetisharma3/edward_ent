@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgreementsTable extends Migration
+class CreateAssignsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateAgreementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('agreements', function (Blueprint $table) {
-             $table->bigIncrements('id');
-             $table->string('Agreement');
-             $table->boolean('status')->default(false);
-             $table->timestamps();
+        Schema::create('assigns', function (Blueprint $table) {
+            $table->id();
+             $table->string('choose_template');
+             $table->string('choose_technician');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateAgreementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agreements');
+        Schema::dropIfExists('assigns');
     }
 }

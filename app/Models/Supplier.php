@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Template extends Model
+class Supplier extends Model
 {
     use HasFactory;
-     protected $fillable = [
-        'template_name','question_name','answer','type','status'
+
+    protected $fillable = [
+        'first_name','last_name','phone','address','state','city','zipcode','company_name','category'
         ];
 }

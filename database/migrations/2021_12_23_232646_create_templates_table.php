@@ -16,15 +16,20 @@ class CreateTemplatesTable extends Migration
         Schema::create('templates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('template_name');
-            $table->boolean('status')->default(false);
-            $table->unsignedBigInteger('question_id');
-            $table->unsignedBigInteger('answer_id');
-            $table->unsignedBigInteger('signature_id');
-            $table->unsignedBigInteger('material_id');
-            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('signature_id')->references('id')->on('signatures')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('question_name');
+            $table->string('answer');
+            $table->enum('typeQ',['text_field','single_choice','multiple_choice']);
+           $table->string('status')->default(false);
+            
+          
+            // $table->unsignedBigInteger('question_id');
+            // $table->unsignedBigInteger('answer_id');
+            // $table->unsignedBigInteger('signature_id');
+            // $table->unsignedBigInteger('material_id');
+            // $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('signature_id')->references('id')->on('signatures')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

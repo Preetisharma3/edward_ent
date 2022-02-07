@@ -17,7 +17,7 @@ class CreateTypesTable extends Migration
              $table->bigIncrements('id');
               $table->enum('question_type', ['Text_Field', 'Single_Choice','Multiple_Choice']);
              $table->unsignedBigInteger('type_id');
-             $table->foreign('type_id')->references('id')->on('questions')->onDelete('cascade')->onUpdate('cascade');
+              $table->foreign('type_id')->references('id')->on('questions')->onDelete('cascade')->onUpdate('cascade');
              $table->timestamps();
         });
     }

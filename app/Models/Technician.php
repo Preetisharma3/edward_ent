@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Template extends Model
+class Technician extends Model
 {
     use HasFactory;
-     protected $fillable = [
-        'template_name','question_name','answer','type','status'
+    protected $fillable = [
+        'start_date','end_date','reason'
         ];
 }
